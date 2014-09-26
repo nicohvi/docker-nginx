@@ -4,7 +4,7 @@
 FROM centos:centos7
 
 # Install nginx
-yum install nginx
+RUN yum install nginx
 
 # Start nginx when container starts
 ENTRYPOINT sudo systemctl start nginx.service
