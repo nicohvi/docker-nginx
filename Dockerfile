@@ -1,7 +1,7 @@
 # Dockerfile for installing and running nginx
 
 # CentOS as the base image
-FROM centos7
+FROM centos/centos7
 
 # Install nginx
 yum install nginx
