@@ -1,7 +1,7 @@
 # Dockerfile for installing and running nginx
 
 # CentOS as the base image
-FROM centos
+FROM centos:centos7
 
 # Add the nginx yum repo
 RUN rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
@@ -10,7 +10,7 @@ RUN rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos
 RUN yum install nginx -y
 
 # The container should run only one service.
-RUN echo "daemon off;" >> /etc/niginx/nginx.conf
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Expose ports from the container to the outside
 EXPOSE 80
