@@ -10,5 +10,5 @@ RUN rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos
 RUN yum install nginx -y
 
 # Start nginx when container starts
-ENTRYPOINT sudo systemctl start nginx.service
+ENTRYPOINT systemctl start nginx.service
 
