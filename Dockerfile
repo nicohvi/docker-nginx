@@ -9,6 +9,11 @@ RUN rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos
 # Install nginx
 RUN yum install nginx -y
 
-# Start nginx when container starts
-ENTRYPOINT systemctl start nginx.service
+# The container should run only one service.
+RUN echo "daemon off;" >> /etc/niginx/nginx.conf
 
+# Expose ports from the container to the outside
+EXPOSE 80
+
+# Run
+CMD /usr/sbin/nginx -c /etc/nginx/nginx.conf
