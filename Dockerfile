@@ -12,6 +12,9 @@ RUN yum install nginx -y
 # The container should run only one service.
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
+# add volume for reading nginx logs
+VOLUME "/var/log/nginx"
+
 # Expose ports from the container to the outside
 EXPOSE 80
 
