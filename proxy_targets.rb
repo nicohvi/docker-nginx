@@ -12,12 +12,9 @@ ENV.each do |env, value|
   if env_parts[0] == 'APP' 
     app = env_parts[1]
     apps[app] ||= { }
-    key = env_parts[2]
-    if key == 'PORT' 
-      # remove tcp:// prefix and split on port number
-      ip_port = value.sub(/^.*?:\/\//, '').split(':') 
-      apps[app][:ip] = ip_port[0]
-      apps[app][:port] = ip_port[1]
+    key = env_parts.last
+    if key == 'ADDR' 
+      apps[app][:ip] = key
     elsif key == 'HOST'
       apps[app][:host] = value
     end
