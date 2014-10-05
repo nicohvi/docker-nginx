@@ -14,7 +14,7 @@ ENV.each do |env, value|
     apps[app] ||= { }
     key = env_parts.last
     if key == 'ADDR' 
-      apps[app][:ip] = key
+      apps[app][:ip] = value
     elsif key == 'HOST'
       apps[app][:host] = value
     end
