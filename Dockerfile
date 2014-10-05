@@ -21,4 +21,4 @@ EXPOSE 80
 # debug
 RUN mkdir -p /etc/nginx/sites-enabled
 
-ENTRYPOINT ruby ./nginx_conf.rb 
+# ENTRYPOINT ruby ./nginx_conf.rb 
