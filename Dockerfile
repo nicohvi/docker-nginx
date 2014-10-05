@@ -4,13 +4,13 @@ MAINTAINER Nicolay Hvidsten <nicohvi@gmail.com>
 # TODO: install nginx
 
 # ensure yum is up to date
-yum update -y 
+RUN yum update -y 
 
 # install nginx
-yum install nginx -y
+RUN yum install nginx -y
 
 # ensure nginx runs in the foreground
-echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
+RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
 
 # add our scripts and templates
 ADD . /
