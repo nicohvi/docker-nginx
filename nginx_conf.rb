@@ -13,7 +13,7 @@ ENV.each do |env, value|
     key = env_parts.last
     if key == 'ADDR' 
       apps[app][:ip] = value
-    elsif key == 'HOST_NAMES'
+    elsif key == 'HOSTNAMES'
       apps[app][:hostnames] = value.split(',')
     end
   end 
