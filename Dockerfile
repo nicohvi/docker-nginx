@@ -13,7 +13,7 @@ MAINTAINER Nicolay Hvidsten <nicohvi@gmail.com>
 # echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
 
 # add our scripts and templates
-ADD .
+ADD . /
 
 # expose port 80 to the world
 EXPOSE 80
