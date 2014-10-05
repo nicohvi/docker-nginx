@@ -13,8 +13,8 @@ MAINTAINER Nicolay Hvidsten <nicohvi@gmail.com>
 # echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
 
 # add our scripts and templates
-ADD ./proxy_targets.rb /
-ADD ./nginx-template.conf /
+ADD nginx_conf.rb /
+ADD nginx-template.conf /
 
 # expose port 80 to the world
 EXPOSE 80
@@ -22,4 +22,4 @@ EXPOSE 80
 # debug
 RUN mkdir -p /etc/nginx/sites-enabled
 
-ENTRYPOINT ruby ./proxy_targets.rb #&& nginx
+ENTRYPOINT ruby ./nginx-conf.rb #&& nginx
