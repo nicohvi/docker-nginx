@@ -29,6 +29,6 @@ apps.each do |app, params|
   content.gsub! '{{hostnames}}', params[:hostnames].join(' ')
   content.gsub! '{{container-ip}}', params[:ip]
   
-  write the new config to the actual file
+  # write the new config to the actual file
   File.open(config_path, 'w') { |file| file.puts content }
 end
