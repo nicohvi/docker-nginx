@@ -16,7 +16,7 @@ ADD . /
 # expose port 80 to the world
 EXPOSE 80
 
-# debug
-RUN mkdir -p /etc/nginx/sites-enabled
+# expose volumes
+VOLUME ['/etc/nginx/']
 
 ENTRYPOINT ruby ./nginx_conf.rb && nginx
