@@ -21,15 +21,13 @@ end
 
 # copy default nginx site conf template and replace tokens
 
-apps.each do |app, value|
-  p "app: #{app}"
-  p "value: #{value}"
+apps.each do |app, params|
   config_path = "/etc/nginx/sites-enabled/#{app}"
   FileUtils.cp '/nginx-template.conf', config_path
 
   content = File.open(config_path).read
-  content.gsub! '{{hostnames}}', app[:hostnames].join(' ')
-  content.gsub! '{{container-ip}}', app[:ip]
+  content.gsub! '{{hostnames}}', params[:hostnames].join(' ')
+  content.gsub! '{{container-ip}}', params[:ip]
   
   write the new config to the actual file
   File.open(config_path, 'w') { |file| file.puts content }
