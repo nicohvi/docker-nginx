@@ -1,4 +1,4 @@
-FROM nicohvi/ruby
+FROM ruby:2.1.3
 MAINTAINER Nicolay Hvidsten <nicohvi@gmail.com>
 
 # ensure yum is up to date
