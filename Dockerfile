@@ -13,8 +13,8 @@ MAINTAINER Nicolay Hvidsten <nicohvi@gmail.com>
 # echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
 
 # add our scripts and templates
-ADD proxy_targets.rb /
-ADD nginx-template.conf /
+ADD ./proxy_targets.rb /
+ADD ./nginx-template.conf /
 
 # expose port 80 to the world
 EXPOSE 80
