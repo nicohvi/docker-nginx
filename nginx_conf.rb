@@ -20,9 +20,9 @@ ENV.each do |env, value|
 end
 
 # copy default nginx site conf template and replace tokens
-p apps
 
 apps.each do |app|
+  p app
   config_path = "/etc/nginx/sites-enabled/#{app}"
   FileUtils.cp '/nginx-template.conf', config_path
 
