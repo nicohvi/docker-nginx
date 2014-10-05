@@ -22,7 +22,7 @@ end
 # copy default nginx site conf template and replace tokens
 
 apps.each do |app, params|
-  config_path = "/etc/nginx/sites-enabled/#{app}"
+  config_path = "/etc/nginx/sites-enabled/#{app.downcase}.conf"
   FileUtils.cp '/nginx-template.conf', config_path
 
   content = File.open(config_path).read

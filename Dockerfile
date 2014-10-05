@@ -4,13 +4,13 @@ MAINTAINER Nicolay Hvidsten <nicohvi@gmail.com>
 # TODO: install nginx
 
 # ensure yum is up to date
-# yum update -y 
+yum update -y 
 
 # install nginx
-# yum install nginx -y
+yum install nginx -y
 
 # ensure nginx runs in the foreground
-# echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
+echo "\ndaemon off;" >> /etc/nginx/nginx.conf 
 
 # add our scripts and templates
 ADD . /
@@ -21,4 +21,4 @@ EXPOSE 80
 # debug
 RUN mkdir -p /etc/nginx/sites-enabled
 
-# ENTRYPOINT ruby ./nginx_conf.rb 
+ENTRYPOINT ruby ./nginx_conf.rb && nginx
